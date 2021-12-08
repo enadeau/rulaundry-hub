@@ -6,8 +6,9 @@ from typing import Tuple
 import adafruit_tca9548a # type: ignore
 import board # type: ignore
 import requests
+from logzero import logger # type: ignore
 
-from i2clibraries.i2c_hmc5883l import i2c_hmc5883l
+from i2clibraries.i2c_hmc5883l import i2c_hmc5883l # type: ignore
 
 UPDATE_REQUEST_URL = "http://ruwashing.enadeau.duckdns.org/api/machine/{id}"
 MAX_FAIL_READ = 5
@@ -102,7 +103,6 @@ class Machine:
 
 machine1 = Machine(1, 1)
 machine3 = Machine(3, 3)
-
 
 while True:
     machine1.update_status()
