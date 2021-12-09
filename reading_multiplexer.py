@@ -3,12 +3,12 @@ import statistics
 import time
 from typing import Tuple
 
-import adafruit_tca9548a # type: ignore
-import board # type: ignore
+import adafruit_tca9548a  # type: ignore
+import board  # type: ignore
 import requests
-from logzero import logger # type: ignore
+from logzero import logger  # type: ignore
 
-from i2clibraries.i2c_hmc5883l import i2c_hmc5883l # type: ignore
+from i2clibraries.i2c_hmc5883l import i2c_hmc5883l  # type: ignore
 
 UPDATE_REQUEST_URL = "http://ruwashing.enadeau.duckdns.org/api/machine/{id}"
 MAX_FAIL_READ = 5
