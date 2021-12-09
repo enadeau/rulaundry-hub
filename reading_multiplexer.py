@@ -101,15 +101,6 @@ class Machine:
         return f"Machine(mahcine_id={self.id}, sensor_channel={self.sensor_channel})"
 
 
-machine1 = Machine(1, 1)
-machine3 = Machine(3, 3)
-
-while True:
-    machine1.update_status()
-    machine3.update_status()
-    time.sleep(1)
-
-
 def save_machine_data():
     MACHINES = [Machine(1, 1), Machine(3, 3)]
     start = time.time()
@@ -128,4 +119,7 @@ def save_machine_data():
         time.sleep(0.1)
 
 
-save_machine_data()
+if __name__ == "__main__":
+    machines = [Machine(1, 1), Machine(3, 3)]
+    for machine in machines:
+        machine.update_status()
