@@ -85,6 +85,7 @@ class Machine:
             while True:
                 try:
                     sensor = i2c_hmc5883l(1)
+                    sensor.setContinuousMode()
                     axes = sensor.getAxes()
                     break
                 except OSError as e:
@@ -120,6 +121,6 @@ def save_machine_data():
 
 
 if __name__ == "__main__":
-    machines = [Machine(1, 1), Machine(3, 3)]
+    machines = [Machine(1, 1), Machine(3, 2), Machine(5, 3)]
     for machine in machines:
         machine.update_status()
